@@ -4,6 +4,7 @@ from constants import TARGET_SPEED, COLORS, TARGET_HEIGHT, TARGET_WIDTH, WINDOW_
 class Target:
     def __init__(self, canvas):
         self.canvas = canvas
+        self.speed = TARGET_SPEED
         self.x = WINDOW_WIDTH - TARGET_WIDTH - 50  # Position on right side
         self.y = 50
         self.width = TARGET_WIDTH
@@ -17,10 +18,15 @@ class Target:
 
     def move(self):
         """Move the target vertically and reverse direction upon hitting window edges."""
-        self.canvas.move(self.id, 0, TARGET_SPEED * self.direction)
-        self.y += TARGET_SPEED * self.direction
+        self.canvas.move(self.id, 0, self.speed * self.direction)
+        self.y += self.speed * self.direction
+
         if self.y <= 0 or self.y + self.height >= WINDOW_HEIGHT:
             self.direction *= -1
+
+    def increase_speed(self, increment):
+        """Increase the target's speed."""
+        self.speed += increment
 
     def shrink(self):
         """Shrink the target's dimensions when hit."""

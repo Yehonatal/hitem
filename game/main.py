@@ -20,7 +20,14 @@ class Game:
         self.ball_label = tk.Label(self.root, text=f"Balls Left: {
                                    MAX_BALLS}", font=("Arial", 14))
         self.ball_label.pack()
-        self.logic = GameLogic(self.canvas, self.score_label, self.ball_label)
+
+        self.level_label = tk.Label(
+            self.root, text="Level: 1", font=("Arial", 14))
+        self.level_label.pack()
+
+        self.logic = GameLogic(self.canvas, self.score_label,
+                               self.ball_label, self.level_label)
+
         self.canvas.bind("<Button-1>", self.shoot_ball)
 
         self.restart_button = tk.Button(
@@ -60,7 +67,7 @@ class Game:
             fill=COLORS["text"]
         )
 
-        self.restart_button.pack()
+        self.restart_button.pack()  # Pack the button to make it visible
 
     def restart_game(self):
         """Restart the game by resetting logic and UI elements."""
@@ -69,7 +76,10 @@ class Game:
         self.score_label.config(text="Score: 0")
         self.ball_label.config(text=f"Balls Left: {MAX_BALLS}")
 
-        self.logic = GameLogic(self.canvas, self.score_label, self.ball_label)
+        self.level_label.config(text="Level: 1")
+
+        self.logic = GameLogic(self.canvas, self.score_label,
+                               self.ball_label, self.level_label)
 
         self.restart_button.pack_forget()
 
