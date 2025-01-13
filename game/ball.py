@@ -1,4 +1,3 @@
-# ball.py
 import math
 from constants import BALL_RADIUS, COLORS, BALL_SPEED, WINDOW_HEIGHT, WINDOW_WIDTH
 
@@ -35,5 +34,5 @@ class Ball:
         self.y += self.direction_y * BALL_SPEED
 
     def is_off_screen(self):
-        """Check if the ball has moved off-screen to the right."""
-        return self.x > WINDOW_WIDTH + BALL_RADIUS  # Consider off-screen if x exceeds window width.
+        return (self.x < 0 or self.x > WINDOW_WIDTH or
+                self.y < 0 or self.y > WINDOW_HEIGHT)

@@ -44,23 +44,23 @@ This project is a single-player Python game developed using Tkinter and John Zel
 ```
 project_root/
 ├── game/
-│   ├── __init__.py           # Package initializer
-│   ├── main.py               # Entry point of the game
-│   ├── player.py             # Player-related classes and logic
-│   ├── target.py             # Target-related classes and logic
-│   ├── ball.py               # Ball-related classes and logic
-│   ├── game_logic.py         # Core game logic and utility functions
-│   ├── constants.py          # Global constants
-│   └── assets/
-│       ├── sounds/           # Sound files (optional)
-│       ├── images/           # Images or icons (optional)
-│       └── fonts/            # Custom fonts (optional)
-├── tests/
-│   ├── __init__.py           # Package initializer for tests
-│   ├── test_game_logic.py    # Unit tests for game logic
-│   ├── test_player.py        # Unit tests for player logic
-│   ├── test_target.py        # Unit tests for target logic
-│   └── test_ball.py          # Unit tests for ball logic
+    ├── __init__.py           # Package initializer
+    ├── main.py               # Entry point of the game
+    ├── player.py             # Player-related classes and logic
+    ├── target.py             # Target-related classes and logic
+    ├── ball.py               # Ball-related classes and logic
+    ├── game_logic.py         # Core game logic and utility functions
+    ├── constants.py          # Global constants
+    └── assets/
+        ├── sounds/           # Sound files (optional)
+        ├── images/           # Images or icons (optional)
+        └── fonts/            # Custom fonts (optional)
+    ├── tests/
+    │   ├── __init__.py           # Package initializer for tests
+    │   ├── test_game_logic.py    # Unit tests for game logic
+    │   ├── test_player.py        # Unit tests for player logic
+    │   ├── test_target.py        # Unit tests for target logic
+    │   └── test_ball.py          # Unit tests for ball logic
 ├── requirements.txt          # Python dependencies (if needed)
 ├── README.md                 # Project description and setup instructions
 └── LICENSE                   # License file (optional)
